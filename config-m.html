@@ -392,41 +392,15 @@ blockquote {
 <li><a href="#configuration-r%C3%A9seaux-machine-1">Configuration réseaux Machine 1</a>
 <ul>
 <li><a href="#1-script-pour-lancer-les-machines">1. Script pour lancer les machines</a></li>
-<li><a href="#2-adresses-ips">2. Adresses IPs:</a>
-<ul>
-<li><a href="#pc-site2-1-win-7">PC-Site2-1 (Win 7)</a></li>
-<li><a href="#pc-site2-2-win-7">PC-Site2-2 (Win 7)</a>
-<ul>
-<li><a href="#configuration-ip">Configuration IP</a></li>
-<li><a href="#configuration-pare-feu">Configuration pare feu</a></li>
-</ul>
-</li>
-<li><a href="#dab-site1-1">DAB-Site1-1</a></li>
-<li><a href="#dab-site2-2">DAB-Site2-2</a></li>
-</ul>
-</li>
+<li><a href="#2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te">2. Configuration des VLAN à partir de l'hôte</a></li>
+<li><a href="#3-configuration-des-adresses-ips">3. Configuration des adresses IPs:</a></li>
 </ul>
 </li>
 <li><a href="#configuration-r%C3%A9seaux-machine-2">Configuration réseaux Machine 2</a>
 <ul>
 <li><a href="#1-script-pour-lancer-les-machines-1">1. Script pour lancer les machines</a></li>
-<li><a href="#2-adresses-ips-1">2. Adresses IPs:</a>
-<ul>
-<li><a href="#configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te">Configuration des VLAN à partir de l'hôte</a></li>
-<li><a href="#pc-site2-1-win-7-1">PC-Site2-1 (Win 7)</a>
-<ul>
-<li><a href="#configuration-ip-1">Configuration IP</a></li>
-<li><a href="#configuration-pare-feu-1">Configuration pare feu</a></li>
-</ul>
-</li>
-<li><a href="#pc-site2-2-win-7-1">PC-Site2-2 (Win 7)</a>
-<ul>
-<li><a href="#configuration-ip-2">Configuration IP</a></li>
-<li><a href="#configuration-pare-feu-2">Configuration pare feu</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te-1">2. Configuration des VLAN à partir de l'hôte</a></li>
+<li><a href="#3-configuration-des-adresses-ips-1">3. Configuration des adresses IPs:</a></li>
 </ul>
 </li>
 </ul>
@@ -434,45 +408,61 @@ blockquote {
 <h2 id="1-script-pour-lancer-les-machines">1. Script pour lancer les machines</h2>
 <pre class="hljs"><code><div>/VMS/DAB-Site1-1/launch.sh
 /VMS/DAB-Site1-2/launch.sh
-/VMS/PC-Site-1-1/launch.sh
-/VMS/PC-Site-1-2/launch.sh
+/VMS/PC-Site-2-1/launch.sh
+/VMS/PC-Site-2-2/launch.sh
 /VMS/PLD-MARS-Debian.web-1/launch.sh
 /VMS/Vyos-Agence-Principale1/launch.sh
 </div></code></pre>
-<h2 id="2-adresses-ips">2. Adresses IPs:</h2>
-<h3 id="pc-site2-1-win-7">PC-Site2-1 (Win 7)</h3>
+<h2 id="2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te">2. Configuration des VLAN à partir de l'hôte</h2>
+<p>Configurer les VLAN des machine virtuelles sur la machine physique 1.</p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p><strong>Output</strong></p>
+<blockquote>
+<pre class="hljs"><code><div>
+</div></code></pre>
+</blockquote>
+<p><strong><em>Remarques</em></strong></p>
+<blockquote>
 <ul>
-<li>IP: <code>10.2.2.2</code></li>
-<li>Masque de sous-réseau: <code>255.255.255.0</code></li>
-<li>Pqsserelle par défaut: <code>10.2.2.1</code> (VLAN 6)</li>
+<li></li>
+<li></li>
 </ul>
-<h3 id="pc-site2-2-win-7">PC-Site2-2 (Win 7)</h3>
-<h4 id="configuration-ip">Configuration IP</h4>
+</blockquote>
+<h2 id="3-configuration-des-adresses-ips">3. Configuration des adresses IPs:</h2>
+<p>Configuration des adresses IPs des machines virtuelles sur la machine physique 1.</p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p><strong>Output</strong></p>
+<blockquote>
+<pre class="hljs"><code><div>
+</div></code></pre>
+</blockquote>
+<p><strong><em>Remarques</em></strong></p>
+<blockquote>
 <ul>
-<li>IP: <code>10.2.2.3</code></li>
-<li>Masque de sous-réseau: <code>255.255.255.0</code></li>
-<li>Passerelle par défaut: <code>10.2.2.1</code> (VLAN 6)</li>
+<li></li>
+<li></li>
 </ul>
-<h4 id="configuration-pare-feu">Configuration pare feu</h4>
-<ul>
-<li>Désactiver le pare feu</li>
-<li>Chemin <code>Panneau de configuration/Pare-feu Windows/ Activer ou désactiver</code></li>
-</ul>
-<h3 id="dab-site1-1">DAB-Site1-1</h3>
-<h3 id="dab-site2-2">DAB-Site2-2</h3>
+</blockquote>
 <h1 id="configuration-r%C3%A9seaux-machine-2">Configuration réseaux Machine 2</h1>
 <p><strong><em>Remarques générales</em></strong></p>
 <blockquote>
 <ul>
 <li>Configurer les VLANs avant de configurer les machines</li>
+<li>On configure les machines Linux depuis la machine hôte</li>
 </ul>
 </blockquote>
 <h2 id="1-script-pour-lancer-les-machines">1. Script pour lancer les machines</h2>
-<pre class="hljs"><code><div>
+<p>Script pour lancer les machines.</p>
+<pre class="hljs"><code><div>/VMS/DAB-Site2-1/launch.sh
+/VMS/DAB-Site2-2/launch.sh
+/VMS/PC-Site-1-1/launch.sh
+/VMS/PC-Site-1-2/launch.sh
+/VMS/Vyos-Agence-Principale2/launch.sh
 </div></code></pre>
-<h2 id="2-adresses-ips">2. Adresses IPs:</h2>
-<h3 id="configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te">Configuration des VLAN à partir de l'hôte</h3>
-<p>Configurer les VLAN de la machine physique 2.</p>
+<h2 id="2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te">2. Configuration des VLAN à partir de l'hôte</h2>
+<p>Configurer les VLAN des machine virtuelles sur la machine physique 2.</p>
 <pre class="hljs"><code><div>sudo vconfig add p255p1 5
 sudo vconfig add p255p1 3
 sudo vconfig add p255p1 6
@@ -505,15 +495,22 @@ Added VLAN with VID == 7 to IF -:p255p1:-
 </li>
 </ul>
 </blockquote>
-<h3 id="pc-site2-1-win-7">PC-Site2-1 (Win 7)</h3>
-<h4 id="configuration-ip">Configuration IP</h4>
-<h4 id="configuration-pare-feu">Configuration pare feu</h4>
-<h3 id="pc-site2-2-win-7">PC-Site2-2 (Win 7)</h3>
-<h4 id="configuration-ip">Configuration IP</h4>
-<h4 id="configuration-pare-feu">Configuration pare feu</h4>
+<h2 id="3-configuration-des-adresses-ips">3. Configuration des adresses IPs:</h2>
+<p>Configuration des adresses IPs des machines virtuelles sur la machine physique 2.</p>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<p><strong>Output</strong></p>
+<blockquote>
+<pre class="hljs"><code><div>
+</div></code></pre>
+</blockquote>
+<p><strong><em>Remarques</em></strong></p>
+<blockquote>
 <ul>
-<li><code>ipconfig -a</code> pour identifier toutes les interfaces des machines</li>
+<li></li>
+<li></li>
 </ul>
+</blockquote>
 
 </body>
 </html>

@@ -6,23 +6,12 @@ H4404
 
 - [Configuration réseaux Machine 1](#configuration-r%C3%A9seaux-machine-1)
     - [1. Script pour lancer les machines](#1-script-pour-lancer-les-machines)
-    - [2. Adresses IPs:](#2-adresses-ips)
-        - [PC-Site2-1 (Win 7)](#pc-site2-1-win-7)
-        - [PC-Site2-2 (Win 7)](#pc-site2-2-win-7)
-            - [Configuration IP](#configuration-ip)
-            - [Configuration pare feu](#configuration-pare-feu)
-        - [DAB-Site1-1](#dab-site1-1)
-        - [DAB-Site2-2](#dab-site2-2)
+    - [2. Configuration des VLAN à partir de l'hôte](#2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te)
+    - [3. Configuration des adresses IPs:](#3-configuration-des-adresses-ips)
 - [Configuration réseaux Machine 2](#configuration-r%C3%A9seaux-machine-2)
     - [1. Script pour lancer les machines](#1-script-pour-lancer-les-machines-1)
-    - [2. Adresses IPs:](#2-adresses-ips-1)
-        - [Configuration des VLAN à partir de l'hôte](#configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te)
-        - [PC-Site2-1 (Win 7)](#pc-site2-1-win-7-1)
-            - [Configuration IP](#configuration-ip-1)
-            - [Configuration pare feu](#configuration-pare-feu-1)
-        - [PC-Site2-2 (Win 7)](#pc-site2-2-win-7-1)
-            - [Configuration IP](#configuration-ip-2)
-            - [Configuration pare feu](#configuration-pare-feu-2)
+    - [2. Configuration des VLAN à partir de l'hôte](#2-configuration-des-vlan-%C3%A0-partir-de-lh%C3%B4te-1)
+    - [3. Configuration des adresses IPs:](#3-configuration-des-adresses-ips-1)
 
 # Configuration réseaux Machine 1
 
@@ -30,53 +19,66 @@ H4404
 ```bash
 /VMS/DAB-Site1-1/launch.sh
 /VMS/DAB-Site1-2/launch.sh
-/VMS/PC-Site-1-1/launch.sh
-/VMS/PC-Site-1-2/launch.sh
+/VMS/PC-Site-2-1/launch.sh
+/VMS/PC-Site-2-2/launch.sh
 /VMS/PLD-MARS-Debian.web-1/launch.sh
 /VMS/Vyos-Agence-Principale1/launch.sh
 ```
 
-## 2. Adresses IPs:
+## 2. Configuration des VLAN à partir de l'hôte
 
-### PC-Site2-1 (Win 7)
+Configurer les VLAN des machine virtuelles sur la machine physique 1.
 
-* IP: ```10.2.2.2```
-* Masque de sous-réseau: ```255.255.255.0```
-* Pqsserelle par défaut: ```10.2.2.1``` (VLAN 6)
+```bash
 
-### PC-Site2-2 (Win 7)
+```
+__Output__
+>```bash
+>
+>```
+__*Remarques*__
 
-#### Configuration IP
+> * 
+> * 
 
-* IP: ```10.2.2.3```
-* Masque de sous-réseau: ```255.255.255.0```
-* Passerelle par défaut: ```10.2.2.1``` (VLAN 6)
+## 3. Configuration des adresses IPs:
 
-#### Configuration pare feu
+Configuration des adresses IPs des machines virtuelles sur la machine physique 1.
 
-* Désactiver le pare feu
-* Chemin ```Panneau de configuration/Pare-feu Windows/ Activer ou désactiver ```
+```bash
 
-### DAB-Site1-1
+```
+__Output__
+>```bash
+>
+>```
+__*Remarques*__
 
-
-### DAB-Site2-2
+> * 
+> * 
 
 # Configuration réseaux Machine 2
 
 __*Remarques générales*__
 > * Configurer les VLANs avant de configurer les machines
+> * On configure les machines Linux depuis la machine hôte
 
 ## 1. Script pour lancer les machines
-```bash
 
+Script pour lancer les machines.
+
+```bash
+/VMS/DAB-Site2-1/launch.sh
+/VMS/DAB-Site2-2/launch.sh
+/VMS/PC-Site-1-1/launch.sh
+/VMS/PC-Site-1-2/launch.sh
+/VMS/Vyos-Agence-Principale2/launch.sh
 ```
 
-## 2. Adresses IPs:
+## 2. Configuration des VLAN à partir de l'hôte
 
-### Configuration des VLAN à partir de l'hôte
+Configurer les VLAN des machine virtuelles sur la machine physique 2.
 
-Configurer les VLAN de la machine physique 2.
 ```bash
 sudo vconfig add p255p1 5
 sudo vconfig add p255p1 3
@@ -104,12 +106,18 @@ __*Remarques*__
 >   * Mode d'accès par pont
 >   * Nom: Nom du VLAN
 
-### PC-Site2-1 (Win 7)
-#### Configuration IP
-#### Configuration pare feu
-### PC-Site2-2 (Win 7)
-#### Configuration IP
-#### Configuration pare feu
+## 3. Configuration des adresses IPs:
 
+Configuration des adresses IPs des machines virtuelles sur la machine physique 2.
 
-* ```ipconfig -a``` pour identifier toutes les interfaces des machines
+```bash
+
+```
+__Output__
+>```bash
+>
+>```
+__*Remarques*__
+
+> * 
+> * 
